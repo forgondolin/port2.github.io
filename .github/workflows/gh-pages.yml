@@ -28,7 +28,7 @@ jobs:
         run:  npm run build
 
       - name: Fazer deploy para o GH Pages
-        uses: peaceiris/actions-gh-pages@latest
+        uses: peaceiris/actions-gh-pages@3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
