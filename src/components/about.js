@@ -8,12 +8,6 @@ const SectionContainer = styled('section')`
   text-align: center;
 `;
 
-const StyledImage = styled('img')`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-`;
-
 const StyledTypography = styled(Typography)`
   color: #333;
   font-size: 18px;
