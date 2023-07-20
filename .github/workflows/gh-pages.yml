@@ -1,0 +1,34 @@
+name: Fazendo o deploy para o github pages
+
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fazer o Checkout do codigo
+        uses: actions/checkout@v2
+
+
+      - name: instalar node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: instalar pacotes
+        run:  npm install
+
+
+      - name: build
+        run:  npm run build
+
+      - name: Fazer deploy para o GH Pages
+        uses: peaceiris/actions-gh-pages@3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
